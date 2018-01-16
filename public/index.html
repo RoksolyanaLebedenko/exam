@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet/less" href="styles/header-layout.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/main-layout-header.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/main-layout-search.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/explore-block.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/experiences-block.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/homes-block.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/footer-layout.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/copyrights.less">
+    <link type="text/css" rel="stylesheet/less" href="styles/common.less">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<header class="header-layout">
+    <span class="header-layout__logo">Logo</span>
+    <div class="header-layout__nav">
+        <a class="header-layout__nav__text" href="#">Become a Host</a>
+        <a class="header-layout__nav__text" href="#">Help</a>
+        <a class="header-layout__nav__text" href="#">Sign up</a>
+        <a class="header-layout__nav__text" href="#">Log in</a>
+    </div>
+</header>
+
+<main class="main-layout">
+    <header class="main-layout-header">
+        <h1 class="main-layout-header__title">Airbnb</h1>
+        <h2 class="main-layout-header__subtitle">Book unique homes and experience a city like a local.</h2>
+    </header>
+    <div class="main-layout-search">
+        <span class="main-layout-search__logo"></span>
+        <input  class="main-layout-search__input" type="text" placeholder="Try 'Osaka'">
+        <button class="main-layout-search__button">
+            <span class="main-layout-search__button-text">Search</span>
+        </button>
+    </div>
+    <div class="explore-block">
+        <script id="Template" type="text/x-handlebars-template">
+            <h2 class="explore-block__title">Explore Airbnb</h2>
+            {{#main-content}}
+            {{#each explore-block}}
+            <div class="explore-block__branch">
+                <span class="explore-block__branch-title">{{title}}</span>
+                <img class="explore-block__img" src="{{cover-img}}" alt="">
+            </div>
+            {{/each}}
+            {{/main-content}}
+        </script>
+    </div>
+    <div class="experiences-block">
+        <script id="experienceTemplate" type="text/x-handlebars-template">
+            {{#exp-content}}
+            <header class="experiences-block__header">
+                <span class="experiences-block__title">Experiences</span>
+                <span class="experiences-block__see-all-option">See all</span>
+            </header>
+            <div class="experiences-block__main-content">
+                {{#each exp-block}}
+                <div class="experiences--block__experience">
+                    <img class="experiences-block__cover-img" src="{{cover-img}}" alt="">
+                    <div class="experiences-block__description">
+                        <h3 class="experiences-block__block-title"><a href="#">{{title}}</a></h3>
+                        <a href="">
+                            <span class="experiences-block__block-subitle">{{subtitle}}</span>
+                            <span class="experiences-block__price">{{price}}</span>
+                        </a>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="experiences-block__rate">64</span>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/exp-content}}
+        </script>
+    </div>
+    <div class="homes-block">
+        <script id="homesTemplate" type="text/x-handlebars-template">
+            {{#home-content}}
+            <header class="homes-block__header">
+                <span class="homes-block__title">Homes</span>
+                <span class="homes-block__see-all-option">See all</span>
+            </header>
+            <div class="homes-block__main-content">
+                {{#each homes-block}}
+                <div class="homes--block__experience">
+                    <img class="homes-block__cover-img" src="{{cover-img}}" alt="">
+                    <div class="homes-block__description">
+                        <h3 class="homes-block__block-title"><a href="#">{{title}}</a></h3>
+                        <a href="">
+                            <span class="homes-block__block-subtitle">{{subtitle}}</span>
+                            <span class="homes-block__price">{{price}}</span>
+                        </a>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="experiences-block__rate">64</span>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/home-content}}
+        </script>
+    </div>
+</main>
+<footer class="footer-layout">
+    <div class="footer-layout__dropbox-wrapper">
+        <select class="footer-layout__dropbox">
+            <option value="english">English</option>
+        </select>
+        <select class="footer-layout__dropbox">
+            <option value="US">United States Dollar</option>
+        </select>
+    </div>
+    <div class="footer-layout__airbnb">
+        <span class="footer-layout__link-text">Airbnb</span>
+        <span class="footer-layout__link-text">About us</span>
+        <span class="footer-layout__link-text">Careers</span>
+        <span class="footer-layout__link-text">Press</span>
+        <span class="footer-layout__link-text">Policies</span>
+        <span class="footer-layout__link-text">Help</span>
+    </div>
+    <div class="footer-layout__airbnb">
+        <span class="footer-layout__link-text">Airbnb</span>
+        <span class="footer-layout__link-text">About us</span>
+        <span class="footer-layout__link-text">Careers</span>
+        <span class="footer-layout__link-text">Press</span>
+        <span class="footer-layout__link-text">Policies</span>
+        <span class="footer-layout__link-text">Help</span>
+    </div>
+    <div class="footer-layout__airbnb">
+        <span class="footer-layout__link-text">Airbnb</span>
+        <span class="footer-layout__link-text">About us</span>
+        <span class="footer-layout__link-text">Careers</span>
+        <span class="footer-layout__link-text">Press</span>
+        <span class="footer-layout__link-text">Policies</span>
+        <span class="footer-layout__link-text">Help</span>
+    </div>
+
+</footer>
+<div class="copyrights">
+    <span class="copyrights__text">© Airbnb, Inc.</span>
+    <div class="copyrights__links">
+        <span class="copyrights__link-text">Terms</span>
+        <span class="copyrights__link-text">Privacy</span>
+        <span class="copyrights__link-text">Site Map</span>
+    </div>
+</div>
+
+<script src="js/handlebars.js"></script>
+<script src="js/exploreTemplate.js"></script>
+<script src="js/experiencesTemplate.js"></script>
+<script src="js/homesTemplate.js"></script>
+
+
+<script src="js/less.min.js" type="text/javascript"></script>
+</body>
+</html>
